@@ -1,6 +1,9 @@
 .App {
   text-align: center;
 }
+body {
+  background-color: #282c34;
+}
 
 .App-logo {
   height: 40vmin;
@@ -35,4 +38,23 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #313131;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #00af9c;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }
