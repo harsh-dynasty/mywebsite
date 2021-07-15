@@ -81,7 +81,7 @@ const MssgBar = () => {
   return (
     <AppBar position="static" style={{ backgroundColor: "#2a2f32" }}>
       <Toolbar>
-        {window.innerWidth >= 400 && (
+        {/* {window.innerWidth >= 400 && (
           <Tooltip title="Insert Emoji ">
             <IconButton
               color="inherit"
@@ -101,7 +101,7 @@ const MssgBar = () => {
           onClose={handleClose}
         >
           <Picker onEmojiClick={onEmojiClick} />
-        </Menu>
+        </Menu> */}
         <form
           onSubmit={handleSubmit}
           style={{ display: "flex", width: "100%" }}
