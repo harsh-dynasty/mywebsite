@@ -113,7 +113,7 @@
     "Projects": [
         {
             "title": "eAccounting",
-            "description": "https://eaccounting.herokuapp.com",
+            "description": "eaccounting.herokuapp.com",
             "link": "https://eaccounting.herokuapp.com",
             "para": [
                 "An accounting website based on HTML, CSS, JS. NodeJS as server side framework and MongoDB as database"
