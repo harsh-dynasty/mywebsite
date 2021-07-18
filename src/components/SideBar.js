@@ -28,12 +28,18 @@ const useStyles = makeStyles((theme) => ({
   root: {
     // flexGrow: 1,
     width: "35%",
-
+    height: "95vh",
+    display: 'flex',
+    flexDirection: 'column',
+    flexGrow: 1,
     backgroundColor: "#131c21",
   },
   rootMobile: {
     width: "100%",
-    height: "100vh",
+    height: "95vh",
+    display: 'flex',
+    flexDirection: 'column',
+    flexGrow: 1,
     backgroundColor: "#131c21",
   },
   menuButton: {
@@ -76,13 +82,13 @@ const SideBar = () => {
   let history = useHistory();
   const [open, setOpen] = useState(false);
   const openDialog = () => {
-    if (window.innerWidth < 400) {
+    if (window.innerWidth < 720) {
       setOpen(true);
     }
   };
   return (
     <div
-      className={window.innerWidth >= 400 ? classes.root : classes.rootMobile}
+      className={window.innerWidth >= 720 ? classes.root : classes.rootMobile}
     >
       <AppBar position="static" style={{ backgroundColor: "#2a2f32" }}>
         <Toolbar>
@@ -95,60 +101,63 @@ const SideBar = () => {
             <Badge
               color="secondary"
               variant="dot"
-              invisible={window.innerWidth >= 400}
+              invisible={window.innerWidth >= 720}
             >
               <MoreVert />
             </Badge>
           </IconButton>
         </Toolbar>
       </AppBar>
-      {[
-        { name: "About me", img: information, link: "about" },
-        { name: "Skills", img: skills, link: "skills" },
-        { name: "Experience", img: portfolio, link: "experience" },
-        { name: "Projects", img: briefing, link: "projects" },
-        { name: "Education", img: graduationCap, link: "education" },
-        { name: "Contact me", img: contact, link: "contact" },
-      ].map((item) => (
-        <Box display="flex" alignItems="center">
-          <Button
-            fullWidth
-            className={classes.button}
-            variant="contained"
-            onClick={() => history.push("/" + item.link)}
-          >
-            <Avatar
-              alt="Remy Sharp"
-              src={item.img}
-              className={classes.avatar}
-              variant="rounded"
-            />
-
-            <Box>
-              <Typography>{item.name}</Typography>
-              <Typography variant="caption">{item.name}</Typography>
-            </Box>
-          </Button>
-
-          <Badge
-            badgeContent={4}
-            className={classes.badge}
-            classes={{ badge: classes.customBadge }}
-            color="primary"
-          ></Badge>
-        </Box>
-      ))}
-      <Dialog
-        onClose={() => setOpen(false)}
-        open={open}
-        classes={{ paper: classes.dialog }}
+      <Box style={{ overflowY: "scroll" }}
       >
-        <DialogTitle>Tip</DialogTitle>
-        <Typography variant="p">
-          Open this website in desktop to get better experience or rotate your
-          phone and then refresh
-        </Typography>
-      </Dialog>
+        {[
+          { name: "About me", img: information, link: "about" },
+          { name: "Skills", img: skills, link: "skills" },
+          { name: "Experience", img: portfolio, link: "experience" },
+          { name: "Projects", img: briefing, link: "projects" },
+          { name: "Education", img: graduationCap, link: "education" },
+          { name: "Contact me", img: contact, link: "contact" }
+        ].map((item) => (
+          <Box display="flex" alignItems="center">
+            <Button
+              fullWidth
+              className={classes.button}
+              variant="contained"
+              onClick={() => history.push("/" + item.link)}
+            >
+              <Avatar
+                alt="Remy Sharp"
+                src={item.img}
+                className={classes.avatar}
+                variant="rounded"
+              />
+
+              <Box>
+                <Typography>{item.name}</Typography>
+                <Typography variant="caption">{item.name}</Typography>
+              </Box>
+            </Button>
+
+            <Badge
+              badgeContent={4}
+              className={classes.badge}
+              classes={{ badge: classes.customBadge }}
+              color="primary"
+            ></Badge>
+          </Box>
+        ))}
+        <Dialog
+          onClose={() => setOpen(false)}
+          open={open}
+          classes={{ paper: classes.dialog }}
+        >
+          <DialogTitle>Tip</DialogTitle>
+          <Typography variant="p">
+            Open this website in desktop to get better experience or rotate your
+            phone and then refresh
+          </Typography>
+        </Dialog>
+      </Box>
     </div>
   );
 };

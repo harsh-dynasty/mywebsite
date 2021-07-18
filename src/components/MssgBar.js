@@ -16,6 +16,7 @@ import {
 } from "@material-ui/core";
 import { InsertEmoticon, MicNone, Telegram } from "@material-ui/icons";
 import { makeStyles, withStyles } from "@material-ui/core/styles";
+import EachMssg from "./EachMssg";
 
 const CssTextField = withStyles({
   root: {
@@ -45,25 +46,44 @@ const useStyles = makeStyles((theme) => ({
     color: "#00af9c",
   },
 }));
-const MssgBar = () => {
+const MssgBar = ({ addMssg, setNewMssg }) => {
   const classes = useStyles();
   const [text, setText] = useState("");
   const { transcript, finalTranscript, resetTranscript, listening } =
     useSpeechRecognition();
-  const [anchorEl, setAnchorEl] = useState(null);
 
-  const handleClose = () => {
-    setAnchorEl(null);
-  };
 
-  const onEmojiClick = (event, emojiObject) => {
-    setText(text + emojiObject.emoji);
-    handleClose();
-  };
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    alert(text);
-    setText("");
+
+    const email = text.split(" ")[0]
+    const message = text.split(" ").slice(1).join(" ")
+
+    if (message.length == 0) alert("Please enter a mssg after email")
+    else {
+      setNewMssg(message)
+
+      setTimeout(() => {
+        addMssg(true);
+      }, 3000);
+
+      setText("");
+    }
+
+    // var res = await fetch(FORMSPARK_ACTION_URL, {
+    //   method: "POST",
+    //   headers: {
+    //     "Content-Type": "application/json",
+    //     Accept: "application/json",
+    //   },
+    //   body: JSON.stringify({
+    //     message, email
+    //   }),
+    // });
+
+    // addMssg(true);
+
+
   };
 
   const startListening = () => {
@@ -78,30 +98,10 @@ const MssgBar = () => {
     return <MicNone />;
   };
 
+  const FORMSPARK_ACTION_URL = "https://submit-form.com/qgEkQhYA";
   return (
     <AppBar position="static" style={{ backgroundColor: "#2a2f32" }}>
       <Toolbar>
-        {/* {window.innerWidth >= 400 && (
-          <Tooltip title="Insert Emoji ">
-            <IconButton
-              color="inherit"
-              aria-controls="simple-menu"
-              aria-haspopup="true"
-              onClick={(e) => setAnchorEl(e.currentTarget)}
-            >
-              <InsertEmoticon />
-            </IconButton>
-          </Tooltip>
-        )}
-
-        <Menu
-          anchorEl={anchorEl}
-          keepMounted
-          open={Boolean(anchorEl)}
-          onClose={handleClose}
-        >
-          <Picker onEmojiClick={onEmojiClick} />
-        </Menu> */}
         <form
           onSubmit={handleSubmit}
           style={{ display: "flex", width: "100%" }}
@@ -111,7 +111,7 @@ const MssgBar = () => {
               className: classes.textfield,
             }}
             variant="outlined"
-            placeholder="Type a message"
+            placeholder="your@mail.com Hi, there!"
             fullWidth
             style={{ color: "white" }}
             value={text + transcript}
@@ -124,7 +124,7 @@ const MssgBar = () => {
             </IconButton>
           </Tooltip>
         </form>
-        {window.innerWidth >= 400 && (
+        {window.innerWidth >= 720 && (
           <Tooltip title="Type by Voice ">
             <IconButton color="inherit" onClick={startListening}>
               {listening ? (

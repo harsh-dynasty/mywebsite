@@ -14,7 +14,7 @@ const DesktopRoutes = () => {
   return (
     <Switch>
       <Route path="/" exact>
-        <Message title={"Dasboard"} />
+        <Message title={"Dashboard"} />
       </Route>
       <Route path="/about">
         <Message img={information} title="About Me" />

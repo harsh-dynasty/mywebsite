@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import background from "../img/background.jpg";
+import data from '../data.json'
 
 import {
   AppBar,
@@ -15,17 +16,24 @@ import { makeStyles } from "@material-ui/core/styles";
 import MssgBar from "./MssgBar";
 import { useLocation } from "react-router";
 import { useHistory } from "react-router-dom";
+import EachMssg from "./EachMssg";
 const useStyles = makeStyles((theme) => ({
   root: {
-    // flexGrow: 3.5,
     width: "65%",
-
+    height: "95vh",
     backgroundImage: `url(${background})`,
+    display: 'flex',
+    flexDirection: 'column',
+    flexGrow: 1
   },
   rootMobile: {
     width: "100%",
-    height: "100vh",
+    height: "95vh",
+    backgroundImage: `url(${background})`,
+
     backgroundColor: "#131c21",
+    display: 'flex',
+    flexDirection: 'column',
   },
   menuButton: {
     marginRight: theme.spacing(2),
@@ -50,17 +58,20 @@ const useStyles = makeStyles((theme) => ({
     color: "#00ae9b",
   },
 }));
+
 const Message = ({ img, title }) => {
   const classes = useStyles();
   const location = useLocation();
   const history = useHistory();
+  const [returnMssg, setRetMssg] = useState(false)
+  const [newMssg, setNewMssg] = useState(false)
   return (
     <div
-      className={window.innerWidth >= 400 ? classes.root : classes.rootMobile}
+      className={window.innerWidth >= 720 ? classes.root : classes.rootMobile}
     >
       <AppBar position="static" style={{ backgroundColor: "#2a2f32" }}>
         <Toolbar>
-          {window.innerWidth < 400 && (
+          {window.innerWidth < 720 && (
             <IconButton color="inherit" onClick={history.goBack}>
               <ArrowBack />
             </IconButton>
@@ -80,17 +91,21 @@ const Message = ({ img, title }) => {
         </Toolbar>
       </AppBar>
       <Box
-        style={{ height: "78%", overflowY: "scroll" }}
+        style={{ overflowY: "scroll" }}
         display="flex"
         flexDirection="column"
       >
-        <Paper elevation={3} className={classes.paper}>
-          <Typography variant="h6" className={classes.paperHead}>
-            Contact me
-          </Typography>
-        </Paper>
+        {
+          data[title].map(({ title, img = false, link = false, description, para = false }, index) => (
+            <EachMssg title={title} align={index % 2 == 0 ? "left" : "right"} description={description} img={img} link={link} para={para} />
+          ))
+        }
+        {location.pathname == "/contact" && newMssg && <EachMssg title="Me" align="right" description={newMssg} />}
+        {location.pathname == "/contact" && returnMssg && <EachMssg title="Harsh Soni" align="left" description="I've got ur message, will ping u in mail shortly..." />}
       </Box>
-      {location.pathname == "/contact" && <MssgBar />}
+      <div style={{ marginTop: 'auto' }}>
+        {location.pathname == "/contact" && <MssgBar addMssg={setRetMssg} setNewMssg={setNewMssg} />}
+      </div>
     </div>
   );
 };

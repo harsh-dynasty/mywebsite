@@ -17,7 +17,7 @@ function App() {
     <div className={classes.root}>
       <Router>
         <Box display="flex">
-          <Media query="(max-width: 400px)">
+          <Media query="(max-width: 720px)">
             {(matches) =>
               matches ? (
                 // <SideBar />

@@ -1,0 +1,160 @@
+{
+    "About Me": [
+        {
+            "title": "LinkedIn",
+            "description": "@harshsonii",
+            "img": "https://media-exp3.licdn.com/dms/image/C5603AQFes93CiXDfDw/profile-displayphoto-shrink_400_400/0/1624077142480?e=1631750400&v=beta&t=cMTughwtWT2ru37kz0UG0a37RoSd7w2ALFyMa3O9T7s",
+            "link": "https://linkedin.com/in/harshsonii",
+            "para": [
+                "Do visit my LinkedIn profile to know more about me"
+            ]
+        },
+        {
+            "title": "Github",
+            "description": "@harsh_dynasty",
+            "link": "https://github.com/harsh-dynasty",
+            "para": [
+                "Checkout my Github Account "
+            ]
+        }
+    ],
+    "Dashboard": [],
+    "Skills": [
+        {
+            "title": "Web Technologies",
+            "description": "React JS , Redux JS",
+            "para": [
+                "HTML / CSS / Javascript",
+                "JQuery",
+                "Node Js / Express JS"
+            ]
+        },
+        {
+            "title": "Databases",
+            "description": "SQL , NoSQL",
+            "para": [
+                "MySql",
+                "MongoDB , Google Firebase"
+            ]
+        },
+        {
+            "title": "Front end Libraries",
+            "description": "Material UI, Bootstrap",
+            "para": [
+                "and much more..."
+            ]
+        },
+        {
+            "title": "Mobile Apps",
+            "description": "React Native"
+        },
+        {
+            "title": "Programming",
+            "description": "C++ , Python , Javascript",
+            "para": [
+                "Object Oriented Programming (OOPS)"
+            ]
+        },
+        {
+            "title": "And still learning new things....",
+            "description": "....."
+        }
+    ],
+    "Experience": [
+        {
+            "title": "SleekSky LLC",
+            "description": "Junior Software Engineer 💻",
+            "para": [
+                "ReactJs Developer",
+                "Part Time",
+                "June 2021 - Ongoing "
+            ]
+        },
+        {
+            "title": "SleekSky LLC",
+            "description": "Frontend Developer 💻",
+            "para": [
+                "ReactJs Developer Intern",
+                "May 2021 -June 2021"
+            ]
+        },
+        {
+            "title": "WebsUtility",
+            "description": "Frontend Developer 💻",
+            "para": [
+                "ReactJs Developer Intern",
+                "Jan 2021 - Feb 2021"
+            ]
+        }
+    ],
+    "Education": [
+        {
+            "title": "B.tech Information Technology",
+            "description": "Madhav Institute Of Technology And Science, Gwalior",
+            "para": [
+                "CGPA : 8.02"
+            ]
+        },
+        {
+            "title": "12th",
+            "description": "Shri Guru Tegh Bahadur Public School, Ratlam",
+            "para": [
+                "Marks : 88.4%"
+            ]
+        },
+        {
+            "title": "10th",
+            "description": "Shri Guru Tegh Bahadur Public School, Ratlam",
+            "para": [
+                "Marks : 86%"
+            ]
+        }
+    ],
+    "Projects": [
+        {
+            "title": "eAccounting",
+            "description": "https://eaccounting.herokuapp.com",
+            "link": "https://eaccounting.herokuapp.com",
+            "para": [
+                "An accounting website based on HTML, CSS, JS. NodeJS as server side framework and MongoDB as database"
+            ]
+        },
+        {
+            "title": "SunCart",
+            "description": "Android Ecommerce app",
+            "link": "https://drive.google.com/file/d/1HtxVANjuX1SlA0kXxVH_6Mejp6F2hUrC/view",
+            "para": [
+                "An Android Ecommerse Application build on Facebook’s React-Native. Used Google’s Firestore as database."
+            ]
+        },
+        {
+            "title": "Sandipani",
+            "description": "Landing Page for any Company",
+            "link": "https://sandipani.herokuapp.com/",
+            "para": [
+                "Website for any company to showcase its products and details",
+                "Comes with variety of rich features",
+                "Fully Responsive"
+            ]
+        },
+        {
+            "title": "Accounting",
+            "description": "Android Application for Shops for Debits/Credits",
+            "link": "https://bit.ly/2Q3YD7p",
+            "para": [
+                "Have a look at this app, its awesome"
+            ]
+        }
+    ],
+    "Contact Me": [
+        {
+            "title": "Harsh Soni",
+            "description": "Contact me for any Project Work 📬",
+            "para": [
+                "harshsoni0310@gmail.com",
+                "Github @harsh-dynasty",
+                "LinkedIn @harshsonii"
+            ]
+        }
+    ]
+}
