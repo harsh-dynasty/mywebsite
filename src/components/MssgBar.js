@@ -63,25 +63,23 @@ const MssgBar = ({ addMssg, setNewMssg }) => {
     else {
       setNewMssg(message)
 
-      setTimeout(() => {
-        addMssg(true);
-      }, 3000);
+      var res = await fetch(FORMSPARK_ACTION_URL, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          message, email
+        }),
+      });
+
+      addMssg(true);
+
 
       setText("");
     }
 
-    // var res = await fetch(FORMSPARK_ACTION_URL, {
-    //   method: "POST",
-    //   headers: {
-    //     "Content-Type": "application/json",
-    //     Accept: "application/json",
-    //   },
-    //   body: JSON.stringify({
-    //     message, email
-    //   }),
-    // });
-
-    // addMssg(true);
 
 
   };
