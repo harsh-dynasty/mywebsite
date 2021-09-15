@@ -1,0 +1,28 @@
+{
+  "files": {
+    "main.css": "/mywebsite/static/css/main.d25bd6fb.chunk.css",
+    "main.js": "/mywebsite/static/js/main.bb86c189.chunk.js",
+    "main.js.map": "/mywebsite/static/js/main.bb86c189.chunk.js.map",
+    "runtime-main.js": "/mywebsite/static/js/runtime-main.7082bd1c.js",
+    "runtime-main.js.map": "/mywebsite/static/js/runtime-main.7082bd1c.js.map",
+    "static/js/2.2a5e92cb.chunk.js": "/mywebsite/static/js/2.2a5e92cb.chunk.js",
+    "static/js/2.2a5e92cb.chunk.js.map": "/mywebsite/static/js/2.2a5e92cb.chunk.js.map",
+    "index.html": "/mywebsite/index.html",
+    "static/css/main.d25bd6fb.chunk.css.map": "/mywebsite/static/css/main.d25bd6fb.chunk.css.map",
+    "static/js/2.2a5e92cb.chunk.js.LICENSE.txt": "/mywebsite/static/js/2.2a5e92cb.chunk.js.LICENSE.txt",
+    "static/media/background.90d38996.jpg": "/mywebsite/static/media/background.90d38996.jpg",
+    "static/media/briefing.0f24ccf0.png": "/mywebsite/static/media/briefing.0f24ccf0.png",
+    "static/media/contact.9b2fdea2.png": "/mywebsite/static/media/contact.9b2fdea2.png",
+    "static/media/graduation-cap.e6a4febe.png": "/mywebsite/static/media/graduation-cap.e6a4febe.png",
+    "static/media/information.b3e7825f.png": "/mywebsite/static/media/information.b3e7825f.png",
+    "static/media/portfolio.5ff3388e.png": "/mywebsite/static/media/portfolio.5ff3388e.png",
+    "static/media/profile.45181d39.jpg": "/mywebsite/static/media/profile.45181d39.jpg",
+    "static/media/skills.06e14c81.png": "/mywebsite/static/media/skills.06e14c81.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.7082bd1c.js",
+    "static/js/2.2a5e92cb.chunk.js",
+    "static/css/main.d25bd6fb.chunk.css",
+    "static/js/main.bb86c189.chunk.js"
+  ]
+}
